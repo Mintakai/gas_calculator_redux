@@ -48,9 +48,13 @@
         <input class="formInput" type="text" placeholder="Speed 2 (km/h)" name="iSpeed2"/>
         <p>PICK A CAR <span id="instruction">(?)</span></p>
         <select class="formDropDown" name="iCars">
-          <option value="3">Car A</option>
-          <option value="3.5">Car B</option>
-          <option value="4">Car C</option>
+          <%
+            var list = '';
+            for(i = 0; i < carlist.cars.length; i++){
+              list += '<option value="' + carlist.cars[i].consumption + '">' + carlist.cars[i].make + '</option>';
+            }
+          %>
+          <%- list %>
         </select>
         <button class="formButton" type="button">
           CALCULATE

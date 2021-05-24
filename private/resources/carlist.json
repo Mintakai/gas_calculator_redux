@@ -1,8 +1,8 @@
 {
   "cars": 
   [
-    { "Make":"Car A" , "Consumption":"3.0" },
-    { "Make":"Car B" , "Consumption":"3.5" },
-    { "Make":"Car C" , "Consumption":"4.0" }
+    { "make":"Car A" , "consumption":"3.0" },
+    { "make":"Car B" , "consumption":"3.5" },
+    { "make":"Car C" , "consumption":"4.0" }
   ]
 }
