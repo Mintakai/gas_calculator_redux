@@ -1,0 +1,8 @@
+{
+  "cars": 
+  [
+    { "Make":"Car A" , "Consumption":"3.0" },
+    { "Make":"Car B" , "Consumption":"3.5" },
+    { "Make":"Car C" , "Consumption":"4.0" }
+  ]
+}
