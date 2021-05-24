@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7B8D93;
+}
+
+body {
+  background-color: #7c8d91;
+}
+
+h1 {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 3vw;
+  transition: color 0.5s ease;
+}
+
+h1:hover {
+  color: white;
+}
+
+p {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 1.2vw;
+}
+
+small {
+  font-size: 1vw;
+}
+
+.formInput, .formDropDown {
+  display: block;
+  width: 15vw;
+  height: 1.5vw;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 1vw;
+}
+
+.formInput[name=iSpeed2] {
+  margin-top: 5px;
+}
+
+.formButton {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 1vw;
+  font-weight: bold;
+  padding: 5px;
+  transition: color .2s ease-in-out;
+}
+
+.formButton:hover {
+  color: black;
+}
+
+#layoutMain {
+  border: solid 5px #384042;
+  border-radius: 50px;
+  background-color: #455357;
+  margin-top: 5vh;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  margin-bottom: 5vh;
+  overflow: hidden;
+}
+
+#layoutFooter {
+  height: 6vh;
+  margin-top: 5vh;
+  text-align: center;
+  background-color: #384042;
+  color: #E5E5E8;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.8);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #384042;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 15vh auto;
+  border: 2px solid black;
+  width: 50vw;
+}
+
+.modal-content-left {
+  float: left;
+  width: 50%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#instruction {
+  transition: color 0.5s ease;
+}
+
+#instruction:hover {
+  cursor: pointer;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7c8d91; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #384042; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #455357; 
+}
+
+.err {
+  border: 3px solid red;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+      background-color: #384042;
+  }
+  
+  h1 {
+      font-size: 10vw;
+  }
+
+  p {
+      font-size: 4vw;
+  }
+
+  small {
+      font-size: 1.5vw;
+  }
+
+  .formInput, .formDropDown {
+      width: 55vw;
+      height: 4vw;
+      margin-top: 20px;
+      font-size: 2.5vw;
+  }
+
+  .formButton {
+      font-size: 2vw;
+  }
+
+  #layoutMain {
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      overflow: auto;
+  }
+
+  #layoutFooter {
+      font-size: 2vw;
+  }
+
+  .modal-content {
+      width: 75vw;
+  }
+
+  .modal-content-left {
+      float: none;
+      margin: auto;
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  small {
+      font-size: 0.8vw;
+  }
+}
