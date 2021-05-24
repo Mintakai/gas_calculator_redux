@@ -62,7 +62,7 @@ function calcUsedTime(speed, distance){
 }
 
 $( document ).ready(function() {
-  alert("TODO\n\n\nTRY/CATCH\n\nCOMMENTS\n\nDEPLOY TO HEROKU")
+  alert("TODO\n\n\nTRY/CATCH\n\nCOMMENTS")
 
   var btn = document.getElementsByClassName("formButton")[0];
   var instr = document.getElementById("instruction");
