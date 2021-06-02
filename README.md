@@ -4,7 +4,6 @@ Solidabis koodihaaste entry
 
 ## Mitä teknologioita olet käyttänyt ja millä käyttöjärjestelmällä?
   - Tämän sivun teknologiat
-    - Heroku
     - Node.js
     - Express
     - EJS
@@ -14,6 +13,7 @@ Solidabis koodihaaste entry
   - Työkalut
     - Visual Studio Code
     - GitHub
+    - Heroku
 
 ## Ohjeet miten ratkaisusi pystytetään ja käynnistetään
   - Sivusto löytyy osoitteesta: https://gas-calculator-redux.herokuapp.com/
