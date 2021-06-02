@@ -58,8 +58,12 @@ function jCalculate() {
 // Check string so that it matches.
 function validate(string) {
   const rgx = new RegExp('^[0-9]+(\.|,)?[0-9]+$');
-  console.log(rgx.test(string));
-  return rgx.test(string);
+  const rgxSingle = new RegExp('^[0-9]$')
+  if (string.len() > 1) {
+    return rgx.test(string);
+  } else {
+    return rgxSingle.test(string);
+  }
 }
 
 // Convert comma to dot.
