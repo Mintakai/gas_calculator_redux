@@ -9,6 +9,8 @@ const file = "./private/resources/carlist.json";
 
 var carlist = JSON.parse(fs.readFileSync(file));
 
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('carlist', carlist);
