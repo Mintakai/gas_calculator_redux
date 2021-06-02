@@ -1,4 +1,6 @@
-# Route Planner / Reittisuunnittelija
+Solidabis koodihaaste entry
+
+# Route Planner
 
 ## Mitä teknologioita olet käyttänyt ja millä käyttöjärjestelmällä?
   - Tämän sivun teknologiat
