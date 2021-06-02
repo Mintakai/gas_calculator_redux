@@ -31,6 +31,8 @@ function jCalculate() {
   }
   // ...otherwise proceed with calculations.
   else {
+
+    // If comma is used instead of dot, convert to dot.
     if (distance.includes(",") || speed1.includes(",") || speed2.includes(",")){
       var distance = convertComma(distance)
       var speed1 = convertComma(speed1)
@@ -53,13 +55,14 @@ function jCalculate() {
   }
 }
 
-// Check string so that it matches 
+// Check string so that it matches.
 function validate(string) {
   const rgx = new RegExp('^[0-9]+(\.|,)?[0-9]+$');
   console.log(rgx.test(string));
   return rgx.test(string);
 }
 
+// Convert comma to dot.
 function convertComma(string) {
   return string.replace(",", ".")
 }
@@ -91,6 +94,10 @@ $( document ).ready(function() {
   var iSpan = document.getElementById("instructionClose");
   var span = document.getElementById("close");
 
+  var resultBoxText = document.getElementById("resultBox").innerText;
+  var resultBox1Text = document.getElementById("resultBox1").innerText;
+  var resultBox2Text = document.getElementById("resultBox2").innerText;
+
   // When "instruction" span is clicked -> show instruction Modal.
   instr.onclick = function() {
     $('#instructionModal').show();
@@ -111,6 +118,9 @@ $( document ).ready(function() {
   // When "close" span is clickeddd (x on the result modal) -> set result Modal display to none (hide modal).
   span.onclick = function() {
     modal.style.display = "none";
+    resultBoxText = "";
+    resultBox1Text = "";
+    resultBox2Text = "";
   }
 
   // When either modal (instruction or result) is open and surrounding area is clicked -> set modal display to none (hide modal).
