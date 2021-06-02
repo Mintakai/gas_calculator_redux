@@ -49,9 +49,9 @@ function jCalculate() {
     var timeUsed2 = calcUsedTime(speed2, distance);
     
     // Draw results to result modal.
-    document.getElementById("resultBox").innerText = "Distance: " + distance + "km\n" + selectedCarMake;
-    document.getElementById("resultBox1").innerText = "Speed: " + speed1 + "\nConsumption: " + consumption1 + "l/100km\nUsed Gas: " + usedGas1 + "l\nUsed time: " + timeUsed1;
-    document.getElementById("resultBox2").innerText = "Speed: " + speed2 + "\nConsumption: " + consumption2 + "l/100km\nUsed Gas: " + usedGas2 + "l\nUsed time: " + timeUsed2;
+    document.getElementById("resultBox").innerText = "Distance: " + distance + " km\n" + selectedCarMake;
+    document.getElementById("resultBox1").innerText = "Speed: " + speed1 + " km/h\nConsumption: " + consumption1 + " l/100km\nUsed Gas: " + usedGas1 + " l\nUsed time: " + timeUsed1;
+    document.getElementById("resultBox2").innerText = "Speed: " + speed2 + " km/h\nConsumption: " + consumption2 + " l/100km\nUsed Gas: " + usedGas2 + " l\nUsed time: " + timeUsed2;
   }
 }
 
