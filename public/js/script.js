@@ -31,18 +31,20 @@ function jCalculate() {
   }
   // ...otherwise proceed with calculations.
   else {
-    var convertedDistance = convertComma(distance)
-    var convertedSpeed1 = convertComma(speed1)
-    var convertedSpeed2 = convertComma(speed2)
+    if (distance.includes(",") || speed1.includes(",") || speed2.includes(",")){
+      var distance = convertComma(distance)
+      var speed1 = convertComma(speed1)
+      var speed2 = convertComma(speed2)
+    }
 
     // Assign calculation results into variables.
-    var consumption1 = calcConsumption(convertedSpeed1, selectedCar);
-    var usedGas1 = calcUsedGas(consumption1, convertedDistance);
-    var timeUsed1 = calcUsedTime(convertedSpeed1, convertedDistance);
+    var consumption1 = calcConsumption(speed1, selectedCar);
+    var usedGas1 = calcUsedGas(consumption1, distance);
+    var timeUsed1 = calcUsedTime(speed1, distance);
   
-    var consumption2 = calcConsumption(convertedSpeed2, selectedCar);
-    var usedGas2 = calcUsedGas(consumption2, convertedDistance);
-    var timeUsed2 = calcUsedTime(convertedSpeed2, convertedDistance);
+    var consumption2 = calcConsumption(speed2, selectedCar);
+    var usedGas2 = calcUsedGas(consumption2, distance);
+    var timeUsed2 = calcUsedTime(speed2, distance);
     
     // Draw results to result modal.
     document.getElementById("resultBox").innerText = "Distance: " + distance + "km\n" + selectedCarMake;
