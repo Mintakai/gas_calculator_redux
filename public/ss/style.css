@@ -119,6 +119,7 @@ small {
 
 #instruction {
   transition: color 0.5s ease;
+  font-size: 8px;
 }
 
 #instruction:hover {
