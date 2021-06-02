@@ -1,4 +1,6 @@
 function jCalculate() {
+
+  // Get user input values from form.
   var distance = document.getElementsByName("iDistance")[0].value;
   var speed1 = document.getElementsByName("iSpeed1")[0].value;
   var speed2 = document.getElementsByName("iSpeed2")[0].value;
@@ -6,10 +8,12 @@ function jCalculate() {
   var selectedCar = car.options[car.selectedIndex].value;
   var selectedCarMake = car.options[car.selectedIndex].innerText;
 
+  // Get validate results and assign them into variables.
   var dstValidate = validate(distance);
   var spd1Validate = validate(speed1);
   var spd2Validate = validate(speed2);
 
+  // Check the validate results and set "err" class onto an element if validation wasn't passed...
   if(dstValidate != true || spd1Validate != true || spd2Validate != true){
     document.getElementById("resultBox").innerText = "There was a problem with your input.\nAccepted symbols: 0-9 and . or ,";
     if(dstValidate != true){
@@ -25,25 +29,37 @@ function jCalculate() {
       speed2Element.classList.add("err");
     }
   }
+  // ...otherwise proceed with calculations.
   else {
-    var consumption1 = calcConsumption(speed1, selectedCar);
-    var usedGas1 = calcUsedGas(consumption1, distance);
-    var timeUsed1 = calcUsedTime(speed1, distance);
+    var convertedDistance = convertComma(distance)
+    var convertedSpeed1 = convertComma(speed1)
+    var convertedSpeed2 = convertComma(speed2)
+
+    // Assign calculation results into variables.
+    var consumption1 = calcConsumption(convertedSpeed1, selectedCar);
+    var usedGas1 = calcUsedGas(consumption1, convertedDistance);
+    var timeUsed1 = calcUsedTime(convertedSpeed1, convertedDistance);
   
-    var consumption2 = calcConsumption(speed2, selectedCar);
-    var usedGas2 = calcUsedGas(consumption2, distance);
-    var timeUsed2 = calcUsedTime(speed2, distance);
+    var consumption2 = calcConsumption(convertedSpeed2, selectedCar);
+    var usedGas2 = calcUsedGas(consumption2, convertedDistance);
+    var timeUsed2 = calcUsedTime(convertedSpeed2, convertedDistance);
     
+    // Draw results to result modal.
     document.getElementById("resultBox").innerText = "Distance: " + distance + "km\n" + selectedCarMake;
     document.getElementById("resultBox1").innerText = "Speed: " + speed1 + "\nConsumption: " + consumption1 + "l/100km\nUsed Gas: " + usedGas1 + "l\nUsed time: " + timeUsed1;
     document.getElementById("resultBox2").innerText = "Speed: " + speed2 + "\nConsumption: " + consumption2 + "l/100km\nUsed Gas: " + usedGas2 + "l\nUsed time: " + timeUsed2;
   }
 }
 
+// Check string so that it matches 
 function validate(string) {
   const rgx = new RegExp('^[0-9]+(\.|,)?[0-9]+$');
   console.log(rgx.test(string));
   return rgx.test(string);
+}
+
+function convertComma(string) {
+  return string.replace(",", ".")
 }
 
 function calcConsumption(speed, consumption){
@@ -62,6 +78,8 @@ function calcUsedTime(speed, distance){
 }
 
 $( document ).ready(function() {
+
+  // Assign elements into variables
   var btn = document.getElementsByClassName("formButton")[0];
   var instr = document.getElementById("instruction");
 
@@ -71,23 +89,29 @@ $( document ).ready(function() {
   var iSpan = document.getElementById("instructionClose");
   var span = document.getElementById("close");
 
+  // When "instruction" span is clicked -> show instruction Modal.
   instr.onclick = function() {
     $('#instructionModal').show();
   }
 
+  // When "formButton" button is clicked -> show result Modal.
+  // Also run jCalculate() function, that calculates results from user input and draw them onto the result Modal.
   btn.onclick = function() {
     $('#resultModal').show();
     jCalculate();
   }
 
+  // When "instructionClose" span is clicked (x on the instruction modal) -> set instruction Modal display to none (hide modal).
   iSpan.onclick = function() {
     instrModal.style.display = "none";
   }
 
+  // When "close" span is clickeddd (x on the result modal) -> set result Modal display to none (hide modal).
   span.onclick = function() {
     modal.style.display = "none";
   }
 
+  // When either modal (instruction or result) is open and surrounding area is clicked -> set modal display to none (hide modal).
   window.onclick = function(event) {
     if (event.target == modal || event.target == instrModal) {
       modal.style.display = "none";
@@ -95,6 +119,8 @@ $( document ).ready(function() {
     }
   }
 
+  // When any of the "formInput" fields is clicked (or gains focus in any other way) -> remove class "err" from element.
+  // "err" class is added to an element in jCalculate() function, on rows: 13-27
   document.querySelectorAll('.formInput').forEach(item => {
     item.addEventListener('focus', event => {
       item.classList.remove("err");
