@@ -94,10 +94,6 @@ $( document ).ready(function() {
   var iSpan = document.getElementById("instructionClose");
   var span = document.getElementById("close");
 
-  var resultBoxText = document.getElementById("resultBox").innerText;
-  var resultBox1Text = document.getElementById("resultBox1").innerText;
-  var resultBox2Text = document.getElementById("resultBox2").innerText;
-
   // When "instruction" span is clicked -> show instruction Modal.
   instr.onclick = function() {
     $('#instructionModal').show();
@@ -116,11 +112,12 @@ $( document ).ready(function() {
   }
 
   // When "close" span is clickeddd (x on the result modal) -> set result Modal display to none (hide modal).
+  // Also clear previous results.
   span.onclick = function() {
     modal.style.display = "none";
-    resultBoxText = "";
-    resultBox1Text = "";
-    resultBox2Text = "";
+    document.getElementById("resultBox").innerText = "";
+    document.getElementById("resultBox1").innerText = "";
+    document.getElementById("resultBox2").innerText = "";
   }
 
   // When either modal (instruction or result) is open and surrounding area is clicked -> set modal display to none (hide modal).
