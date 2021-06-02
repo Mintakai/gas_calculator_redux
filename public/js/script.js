@@ -112,19 +112,26 @@ $( document ).ready(function() {
   }
 
   // When "close" span is clickeddd (x on the result modal) -> set result Modal display to none (hide modal).
-  // Also clear previous results.
+  // Also run clearResults function.
   span.onclick = function() {
     modal.style.display = "none";
+    clearResults();
+  }
+
+  // Clears result Modals values.
+  function clearResults() {
     document.getElementById("resultBox").innerText = "";
     document.getElementById("resultBox1").innerText = "";
     document.getElementById("resultBox2").innerText = "";
   }
 
   // When either modal (instruction or result) is open and surrounding area is clicked -> set modal display to none (hide modal).
+  // Also run clearResults function.
   window.onclick = function(event) {
     if (event.target == modal || event.target == instrModal) {
       modal.style.display = "none";
       instrModal.style.display = "none";
+      clearResults();
     }
   }
 
