@@ -59,7 +59,7 @@ function jCalculate() {
 function validate(string) {
   const rgx = new RegExp('^[0-9]+(\.|,)?[0-9]+$');
   const rgxSingle = new RegExp('^[0-9]$')
-  if (string.len() > 1) {
+  if (string.length > 1) {
     return rgx.test(string);
   } else {
     return rgxSingle.test(string);
@@ -71,14 +71,17 @@ function convertComma(string) {
   return string.replace(",", ".")
 }
 
+// Calculate consumption.
 function calcConsumption(speed, consumption){
   return (consumption * Math.pow(1.009, speed)).toFixed(2);
 }
 
+// Calculate used gas.
 function calcUsedGas(consumption, distance){
   return ((consumption * distance) / 100).toFixed(2);
 }
 
+// Calculate used time.
 function calcUsedTime(speed, distance){
   var time = (distance / speed) * 60;
   var hours = Math.floor(time / 60);
